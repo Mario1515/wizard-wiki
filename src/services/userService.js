@@ -23,7 +23,7 @@ exports.login = async (email, password) => {
   }
 
   //validate password
-  validatePassword(password, user.password);
+  await validatePassword(password, user.password);
 
   const token = await getToken(user);
   return token;
