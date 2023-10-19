@@ -17,10 +17,19 @@ router.get("/login", (req, res)  => {
     res.render("user/login");    
 });
 
-router.post("/login", (req, res) => {
-    console.log(req.body);
+router.post("/login", async (req, res) => {
+
     const { email, password } = req.body;
 
+    const token = await userService.login(email, password);
+
+    res.cookie("token", token, {httpOnly: true} );
+    res.redirect("/");
+});
+
+
+router.get("/logout", (req,res) =>{
+    res.clearCookie("token");
     res.redirect("/");
 });
 
