@@ -43,4 +43,14 @@
     - added error textbox within main / imported from wizard.wiki
     - Check if all errors are correct
 19. Adding a mongoose model for the task (animal)
-   -> proceed from here
+20. Created a postController + router update navigation to Dashboard
+   - created animalService.js
+21. Functionality for Posts
+   - creadted dashboard
+   - creating create function to add posts / Check if it is working
+   - created home functionality to show animals
+   - working on Details functionality
+    - working on Edit
+     - working on Delete
+     - working on Donation
+     - working on search
