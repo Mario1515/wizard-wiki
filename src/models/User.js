@@ -14,10 +14,11 @@ const userSchema = new mongoose.Schema({
 });
 
 //checking if email exists
-userSchema.path("email").validate(function (emailInput) {
-  const email = mongoose.model("User").findOne({ email: emailInput });
-  return !!email;
-}, "Email already exists!");
+userSchema.path("email").validate( async function (emailInput) {
+  const user = await mongoose.model("User").findOne({ email: emailInput });
+  return !user;
+}, "Email already exists");
+
 
 //checking if passwords match
 userSchema.virtual("repeatPassword").set(function (value) {
