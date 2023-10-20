@@ -42,4 +42,5 @@
     - uncomment sections
     - added error textbox within main / imported from wizard.wiki
     - Check if all errors are correct
-19. 
+19. Adding a mongoose model for the task (animal)
+   -> proceed from here
